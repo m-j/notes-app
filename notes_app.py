@@ -2,7 +2,7 @@ from aiohttp import web
 import asyncio
 
 from data.db import Base, engine
-from handlers.notes_handler import get_notes
+from handlers.notes_handler import get_notes, post_note
 from utils.load_config import load_config
 from data import note
 
@@ -16,7 +16,8 @@ def main():
     # loop.run_in_executor(main)
     app = web.Application()
     app.add_routes([
-        web.get('/notes', get_notes)
+        web.get('/notes', get_notes),
+        web.post('/notes', post_note)
     ])
 
     web.run_app(app, port=config['port'])

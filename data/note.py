@@ -12,4 +12,4 @@ class Note(Base):
     create_date = Column(DateTime)
 
     def to_dict(self):
-        return {'id': self.id, 'content': self.content, 'createDate': self.create_date}
+        return {'id': self.id, 'content': self.content, 'createDate': self.create_date.isoformat()}
