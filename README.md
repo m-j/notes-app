@@ -43,6 +43,11 @@ Request:
 
 Configuration is stored in config.json file which is red from working directory.
 
+## Migrations
+
+This app does not have proper sophisticated migrations mechanisms however it will automatically 
+create tables in database upon connection. This is good enough for this exercise.  
+
 # Your task
 
 Create ansible playbook which:
